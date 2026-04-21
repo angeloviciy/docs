@@ -1,0 +1,31 @@
+---
+title: 'Connecting Redshift'
+description: 'Add a Redshift data source to Conway'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+Connecting Redshift is a short form: point Conway at your cluster, give it credentials with just enough access to read the tables you care about, and test it.
+
+## Service account safety
+
+The user Conway authenticates as should only have the permissions it needs to read the tables you want analyzed. Avoid superusers and broadly privileged accounts — scope the account to exactly the tables in play.
+
+## Walkthrough: connecting a new Redshift warehouse
+
+<Steps>
+  <Step title="Open the dialog">
+    From [Sources overview](/sources/overview), click **Add Data Source** and pick Redshift.
+  </Step>
+  <Step title="Fill in cluster details">
+    Name the connection and supply host, port (usually `5439`), database, schema, username, and password.
+  </Step>
+  <Step title="Submit">
+    Click **Add Data Source**.
+  </Step>
+  <Step title="Test it">
+    Run a [test connection](/sources/testing) before kicking off any live runs.
+  </Step>
+</Steps>

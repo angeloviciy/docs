@@ -1,0 +1,38 @@
+---
+title: 'Run detail overview'
+description: 'Reading, watching, and auditing a single run'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+Clicking any run in the Detection hub opens the **run detail** view — the deepest screen in Conway. This is where you watch a run execute in real time, read the investigations it produces, and audit what the agent did.
+
+<Frame>
+  <img src="/images/run-detail/overview.png" alt="A run detail page" />
+</Frame>
+
+## The run header
+
+The left side of the page summarises the run — the objective you submitted, the source and table it's operating on, start and finish times, and a status chip (*processing*, *completed*, or *failed*). While a run is processing, a **phase chip** next to the status tells you what the agent is doing right now: *Analyzing…*, *EDA…*, *Detecting…*, *Engineering…*, *Mining rules…*. See [Run lifecycle and phases](/run-detail/lifecycle) for what each phase means.
+
+A copy-ID control next to the status chip grabs the run's ID for sharing in a ticket or chat.
+
+## The three tabs
+
+The main panel has three tabs, each a different lens on the same run:
+
+- **[Investigations](/run-detail/investigations)** — the written outputs. Every report the run produced, with clickable references. Conway opens the page on this tab once a run is complete.
+- **[Telemetry](/run-detail/telemetry)** — the audit trail. Every tool call and query in order. This is the default tab while a run is still processing.
+- **[Intelligence](/run-detail/memories)** — observations the agent chose to save for future runs.
+
+## While the run is processing
+
+The page updates live — the phase chip advances, investigations appear on the Investigations tab as they're written, and the telemetry feed streams new steps in from the bottom. Use the refresh icon in the breadcrumb row to force a re-pull.
+
+A processing run has a cancel control next to the status chip. Cancelling stops the agent cleanly — investigations already produced are kept, in-flight work is dropped, and the run ends in *failed* with a cancellation reason in telemetry.
+
+## Iterations
+
+If the run is a parent that spawned child iterations, they show up in a list on the left. Click one to jump into it. See [Parent runs and iterations](/run-detail/parent-iterations).

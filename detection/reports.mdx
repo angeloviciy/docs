@@ -1,0 +1,37 @@
+---
+title: 'Reports tab'
+description: 'Browse investigations across all runs'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **Reports** tab is a flat, sortable grid of every investigation Conway has produced — across every run. Use it when you want to look at findings globally rather than by-run.
+
+## The reports grid
+
+Each row is one investigation. Sort by clicking a column header — **Date** is the most useful for day-to-day triage. Click a row to jump straight into the investigation inside its run, where you can read the report, override the verdict, or drag it into chat.
+
+The **Verdicts** column shows a horizontal bar of how Conway classified each individual classification inside the investigation. Hover it to see the split — useful when an investigation covers many transactions and the overall verdict is an aggregate.
+
+## Search and filters
+
+Use **Search investigations…** for free-text matching across titles and account identifiers. Click **Filter** in the top right to scope by verdict — any combination of **Positive**, **Negative**, or **Uncertain**. **Clear all** resets the filter.
+
+## Walkthrough: triage today's positives
+
+<Steps>
+  <Step title="Open the Reports tab">
+    From Detection, click **Reports**.
+  </Step>
+  <Step title="Filter to Positives">
+    Click **Filter**, tick **Positive**, close the dropdown.
+  </Step>
+  <Step title="Sort by date">
+    Click the **Date** column header so today's work is at the top.
+  </Step>
+  <Step title="Open the top investigation">
+    Click the row. From there you can read the report, drag it into chat, or override the verdict. See [Investigations tab](/run-detail/investigations).
+  </Step>
+</Steps>

@@ -1,0 +1,38 @@
+---
+title: 'Case detail overview'
+description: 'Working a single case from open to close'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+Clicking a case in Response opens its detail page — the workspace you use to work the case from open to close.
+
+<Note>
+**Cases are not available in Pilot deployments.** See [Pilot limitations](/pilot/limitations).
+</Note>
+
+## The case header
+
+The top of the page tells you who and what this case is about: title, an editable summary you can tighten as you learn more, the SLA, the assigned analyst, and the severity. Use the severity control in the breadcrumb row (**Cases › &lt;id&gt;**) to override severity when your read differs from the system's. **Cases** in the breadcrumb takes you back to the queue.
+
+## The command bar
+
+Three quick-action buttons sit above the tabs — every one is recorded in the [audit trail](/case-detail/audit-trail).
+
+- **Action** — take a concrete response: *Freeze Account*, *Reset Credentials*, *Block IP*, *Escalate to Tier 2*, *Flag for Review*. Opens a structured confirmation dialog before committing.
+- **RFI** — send a **request for information** to someone (an analyst on your team, a customer, an internal partner). The open asks show up in the case's [RFI / Checklist tab](/case-detail/rfi-checklist).
+- **Note** — drop a free-text note. Visible to everyone on the case.
+
+## Tabs
+
+Working a case is a path through six tabs. You won't always touch all of them, but this is the order most analysts use:
+
+| Tab | What you do there |
+| --- | --- |
+| [**Evidence**](/case-detail/evidence) | Read what happened, attach documents, scrub the timeline. |
+| [**Entities / Findings**](/case-detail/entities-findings) | Understand who's involved and what Conway surfaced about them. |
+| [**RFI / Checklist**](/case-detail/rfi-checklist) | Send asks, work through the required steps. |
+| [**Determination**](/case-detail/determination) | Record your disposition — *True positive*, *False positive*, *Inconclusive*. |
+| [**Audit Trail**](/case-detail/audit-trail) | Confirm the full record of what was done before closing. |

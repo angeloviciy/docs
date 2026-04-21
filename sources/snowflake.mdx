@@ -1,0 +1,43 @@
+---
+title: 'Connecting Snowflake'
+description: 'Add a Snowflake data source to Conway'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+Snowflake is the most common warehouse connected to Conway. You'll authenticate with OAuth or a key pair, tell Conway which warehouse/database/schema to run against, and give it a role scoped to just the tables it needs to read.
+
+## Authentication methods
+
+Choose one of two tabs at the top of the dialog:
+
+- **snowflake-oauth** — browser-based OAuth. Best when Snowflake is federated through your identity provider and you want users to authenticate as themselves.
+- **snowflake-keypair** — key-pair authentication. Best for service-to-service connections that shouldn't be tied to any one user.
+
+Password-based connections are also supported in environments where neither OAuth nor key-pair is available. Your admin knows which method fits your Snowflake setup.
+
+## Role safety
+
+The role you pick governs what Conway can read. Conway blocks **ACCOUNTADMIN**, **SECURITYADMIN**, **ORGADMIN**, and **GLOBALORGADMIN** outright — they're too privileged — and warns on **PUBLIC** because it's usually too broad. Pick a role scoped specifically to the tables you want analyzed.
+
+## Walkthrough: connecting a new Snowflake warehouse
+
+<Steps>
+  <Step title="Open the dialog">
+    From [Sources overview](/sources/overview), click **Add Data Source** and pick Snowflake.
+  </Step>
+  <Step title="Pick a method">
+    Select **snowflake-oauth** or **snowflake-keypair** based on your admin's guidance.
+  </Step>
+  <Step title="Fill in account details">
+    Name the connection and supply the account, warehouse, database, schema, and role.
+  </Step>
+  <Step title="Connect">
+    Click **Connect with OAuth** (OAuth) and authorize in the pop-up, or **Add Data Source** (key pair) once your key is attached.
+  </Step>
+  <Step title="Test it">
+    Run a [test connection](/sources/testing) before kicking off any live runs.
+  </Step>
+</Steps>

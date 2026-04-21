@@ -1,0 +1,29 @@
+---
+title: 'Run lifecycle and phases'
+description: 'What each phase of a run means'
+---
+
+A run moves through several **phases** as it executes. Each phase maps to a concrete activity the agent is doing on your data, and you can see the active phase as a chip next to the status on the run detail page.
+
+## The phases
+
+Phase labels carry a trailing ellipsis while they're active — e.g. **Detecting…**. The ellipsis drops off once the run finishes.
+
+| Phase | What the agent is doing |
+| --- | --- |
+| **Starting…** | Spinning up the run, validating source access, and loading the objective. |
+| **Analyzing…** | Reading the objective and planning the approach. |
+| **EDA…** | Exploratory data analysis — understanding the shape, cardinality, and distribution of the table before digging deeper. |
+| **Detecting…** | Applying detection logic — finding anomalies, patterns, or cohorts worth investigating. |
+| **Engineering…** | Feature engineering — building derived signals the agent uses later. |
+| **Mining rules…** | Generating rule proposals from the data. Feeds the **PROPOSALS** sub-tab on the [Rules](/detection/rules) page. |
+
+Not every run goes through every phase — the objective and the data together decide which ones run.
+
+## Phase vs. status
+
+The status chip and the phase chip answer different questions. Status is the run's overall state (*processing*, *completed*, or *failed*); phase is what the agent is actively doing *right now*, and only exists while the status is *processing*. When a run completes or fails, the phase chip disappears and only the status remains.
+
+## Cancelling a run
+
+You can cancel a run while it's in any phase. The cancel control is next to the status chip on the run detail page. Cancelling stops the agent as soon as the current step finishes, keeps investigations already written to the [Investigations tab](/run-detail/investigations), and ends the run in *failed* with a cancellation reason in telemetry.

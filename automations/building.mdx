@@ -1,0 +1,42 @@
+---
+title: 'Building a playbook'
+description: 'Using the playbook builder — phases, gates, and saving'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+Clicking **CREATE** or opening any existing playbook takes you into the **builder** — a visual editor where a playbook is a sequence of phases connected by decision gates. Name the playbook something an analyst would recognise at a glance in the **Playbook** column on a case — e.g. *"ATO triage — mid-risk"* rather than *"v2 copy 3"*.
+
+## Phases and gates
+
+A **phase** is one step in the playbook. Drag from the edge of an existing phase to create a new downstream phase, then click it to pick its type and fill in its configuration. Typical phase types run a query, evaluate a condition, send a request for information, or take an action.
+
+Between phases, a **gate** decides which branch to take based on the previous phase's outcome — for example, *if verdict is Positive → take action; otherwise → escalate*, or *if severity is High → notify Tier 2; otherwise → flag for review*. Click a gate to change its condition. Gates keep the flow readable: the diagram matches the decision logic.
+
+## Saving and publishing
+
+Saving and publishing are deliberately separate actions:
+
+- **Save** writes your edits. A Draft stays a Draft; a Live playbook keeps serving the previously-published version to your cases.
+- **Publish** takes a Draft Live, or replaces the Live version with your edits. This is the step that actually makes the playbook fire.
+
+Until you save, Conway shows an **Unsaved** marker at the top. If any phase still needs attention, you'll see a *"{N} to review"* counter next to it — resolve those before publishing.
+
+## Walkthrough: editing an existing playbook
+
+<Steps>
+  <Step title="Open it">
+    From [Automations overview](/automations/overview) or the [Response Automations tab](/response/automations-tab), click the playbook.
+  </Step>
+  <Step title="Make your edits">
+    Click a phase to edit it; drag from a phase edge to add a new downstream phase; click a gate to change its condition.
+  </Step>
+  <Step title="Save">
+    Click **SAVE**. The **Unsaved** marker clears.
+  </Step>
+  <Step title="Publish when ready">
+    Click **PUBLISH**. Anyone else using the playbook starts getting the new version immediately.
+  </Step>
+</Steps>

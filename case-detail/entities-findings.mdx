@@ -1,0 +1,30 @@
+---
+title: 'Entities and findings'
+description: 'People, accounts, devices, and what the AI has surfaced'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **Entities / Findings** tab is the structured view of *who and what* is involved in the case and *what Conway thinks matters* about them.
+
+<Note>
+**Cases are not available in Pilot deployments.** See [Pilot limitations](/pilot/limitations).
+</Note>
+
+## Entities
+
+Every entity attached to the case appears as a card — the same entities you can browse in [Intel](/detection/intel). You'll see people, organisations, accounts, locations (addresses, IPs, geographies), and typologies — the pattern the case appears to match, like *ATO via SIM swap*. Click any card to open the full dossier.
+
+## The network graph
+
+A network graph above the entity cards visualises how the entities on this case connect to each other and to other cases. Hover a node for a quick summary; click to pin it and focus on its direct connections. Useful when a case involves more than a handful of accounts and the relationships aren't obvious from the list.
+
+## Activity charts
+
+Accounts and people with enough history carry small activity charts — transaction counts, login frequency, or similar — so you can see at a glance whether current behaviour is in or out of pattern. If something looks off, drag the entity onto the chat pane and ask the assistant to explain what changed and when.
+
+## Findings
+
+Below the entities, the **Findings** section lists what the agent has surfaced for the case — short, narrative observations, each linking back to the evidence on the timeline that supports it. Walk through them before reaching a determination; mark each one reviewed as you go so you don't second-guess later what you've already considered.

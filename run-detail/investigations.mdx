@@ -1,0 +1,34 @@
+---
+title: 'Investigations tab'
+description: 'Read reports from a single run and override verdicts'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **Investigations** tab on the run detail page is where you read what the agent wrote and, if you disagree with a verdict, record the override.
+
+## Investigation reports
+
+Click any investigation card to expand its report. Reports are markdown: a short summary of what the agent looked at, the verdict with the evidence that drove it, and specific findings — counts, patterns, data points.
+
+Reports cite entities, features, and other reports using inline brackets like `<[feature:daily_txn_count]>` or `<[report:abc123]>`. Click any bracketed reference and Conway opens a drawer with the referenced object on top of the page — no navigation, no losing your place.
+
+<Snippet file="verdict-values.mdx" />
+
+## Verdict overrides
+
+If you disagree with Conway's call — say you know an account is legitimate for a reason the agent could not see — record the override directly on the investigation. Overrides carry forward: the Detection **Reports** grid, entity dossiers, and the chat pane all reflect the new verdict. The original verdict is preserved in the audit trail so it's clear who changed it and why.
+
+<Steps>
+  <Step title="Open the investigation">
+    Click the card to expand the report.
+  </Step>
+  <Step title="Change the verdict">
+    Click the verdict chip and pick the new value. Conway will ask you to note the reason.
+  </Step>
+  <Step title="Save">
+    Your verdict becomes the canonical one.
+  </Step>
+</Steps>

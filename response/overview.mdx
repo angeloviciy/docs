@@ -1,0 +1,28 @@
+---
+title: 'Response overview'
+description: 'The case queue — Kanban and list views'
+---
+
+**Response** is where an analyst works real incidents end to end. If **Detection** answers "is there something here?", Response answers "what are we going to do about it?". Each row in Response is a **case** — a workspace that tracks an incident from open through to a recorded disposition.
+
+<Note>
+**Response is not available in Pilot deployments.** Everything in this section describes the workflow in a full deployment. See [Pilot limitations](/pilot/limitations).
+</Note>
+
+## Kanban and list views
+
+Toggle the view in the top right. **Kanban** gives you a board with one column per case status — *Open* (not yet picked up), *Investigating* (someone is actively on it), *Escalated* (handed to a higher tier), *Resolved* (closed). Drag a card between columns to change its status.
+
+**List view** shows the same cases as a dense, sortable table — use it when you want to sort by severity or SLA, or when the backlog is too long for a board.
+
+## SLA countdown
+
+Every case has an SLA — a target time to reach the next state — shown in its row. A remaining SLA looks like `2d 4h` or `3h`; an overdue case is highlighted and reads `1d overdue`. In list view, sort by the SLA column to surface anything about to trip.
+
+## Assigning a case
+
+Unassigned cases show an **Assign Case** affordance. Click it and pick an owner (including yourself). The same control handles reassignment — changing the owner later is no different from assigning in the first place.
+
+## Starting a new case
+
+New cases can enter the queue three ways: directly from an investigation on the [Investigations tab](/run-detail/investigations), from the chat pane ("open a case for this account"), or manually from the Response page itself. Once open, click the case to [work it end to end](/case-detail/overview).

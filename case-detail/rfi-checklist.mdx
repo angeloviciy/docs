@@ -1,0 +1,30 @@
+---
+title: 'Requests for information and checklist'
+description: 'Tracking outstanding questions and required investigation steps'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **RFI / Checklist** tab is the place to track what's still open on a case. Two pieces sit side by side: **requests for information** sent to humans, and a **checklist** of investigation steps that must happen before the case can be determined.
+
+<Note>
+**Cases are not available in Pilot deployments.** See [Pilot limitations](/pilot/limitations).
+</Note>
+
+## Sending an RFI
+
+Click the **RFI** button at the top of the case, or **New RFI** inside this tab. You tell Conway who to ask, which channel to send through (*Email*, *Slack*, *Phone*, or *Ticket*), and the subject and body of your question. Click **SEND** and the RFI is delivered, logged, and added to the outstanding list here.
+
+Specific asks get faster answers. *"Can you confirm you made a purchase at 02:14 UTC from a London IP?"* beats *"Was this you?"*
+
+## The open RFI list
+
+Each open RFI tells you who it was sent to, which channel, when it was sent, and when the response is due. When a reply comes back through Conway, click **Respond** to attach it; if the reply came in out-of-band (over a phone call, say), click **Mark received** and paste what you learned. Closed RFIs collapse into a history below the open list.
+
+## The checklist
+
+The checklist lists steps that must happen before you can reach a determination. Items appear automatically based on the case type — *Verify device fingerprint*, *Confirm KYC*, *Review last 30 days of activity* — and you can add custom items. Each item takes an optional evidence link (drop an artifact from the Evidence tab to back it up) and an assignee for who owns the step.
+
+The Determination tab enforces that all required items are ticked before a case can be closed. Work the checklist top to bottom rather than cherry-picking — the order usually reflects the order the investigation needs to happen in.

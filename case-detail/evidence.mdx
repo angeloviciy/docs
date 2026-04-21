@@ -1,0 +1,28 @@
+---
+title: 'Evidence and timeline'
+description: 'What you have on the case and when it happened'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **Evidence** tab is the pile of everything attached to the case — documents, enrichment results, cross-case search results — arranged along a chronological timeline.
+
+<Note>
+**Cases are not available in Pilot deployments.** See [Pilot limitations](/pilot/limitations).
+</Note>
+
+## The timeline
+
+The timeline is the dominant view on this tab — everything that has happened on the case, in order. Each entry is one of an uploaded document or screenshot, an automatic enrichment (device lookups, KYC checks, etc.), a linked investigation from Detection, or an action / note / RFI an analyst took. Click any entry to expand it in place and see the details.
+
+When Conway runs enrichment for the case, the result lands on the timeline as its own entry — no separate tab to hunt in.
+
+## Adding evidence
+
+Use **Add evidence** above the timeline to upload documents, screenshots, emails, or anything else that belongs on the case. Uploads land on the timeline at the moment they were added, so the order of evidence stays honest.
+
+## Cross-case search
+
+Use cross-case search above the timeline to take any entity on the current case and surface every other case that mentions it. This is the quickest way to answer *"has this account come up before?"* — and often turns a standalone case into a pattern.

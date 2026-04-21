@@ -1,0 +1,58 @@
+---
+title: 'Determination'
+description: 'Recording your disposition on a case'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **Determination** tab is where you record the final call on a case — the outcome that closes it out and feeds back into Conway's learning. Every case eventually ends with a determination.
+
+<Note>
+**Cases are not available in Pilot deployments.** See [Pilot limitations](/pilot/limitations).
+</Note>
+
+## Top-level dispositions
+
+Three options:
+
+- **TRUE POSITIVE** — the activity was of concern and action was warranted.
+- **FALSE POSITIVE** — the activity turned out to be benign.
+- **INCONCLUSIVE** — evidence was insufficient to decide.
+
+Pick one of the three to reveal the subcategories.
+
+## Subcategories
+
+Each top-level disposition asks you for a reason:
+
+- **True positive**: *ATO via SIM swap*, *ATO via credential stuffing*, *ATO via session hijack*, *ATO via phishing*, *Insider threat*.
+- **False positive**: *Legitimate user*, *Known travel*, *VPN/proxy usage*, *Device change*.
+- **Inconclusive**: *Insufficient evidence*, *Awaiting information*.
+
+Be specific — the subcategory feeds back into Conway's models. A case closed as *True positive / ATO via phishing* teaches the system something a bare *True positive* doesn't.
+
+## Walkthrough: closing a case
+
+<Steps>
+  <Step title="Confirm the checklist is done">
+    Open [RFI / Checklist](/case-detail/rfi-checklist) and make sure every required item is ticked. Determination won't close a case with unresolved required items.
+  </Step>
+  <Step title="Pick the disposition">
+    Click **TRUE POSITIVE**, **FALSE POSITIVE**, or **INCONCLUSIVE**.
+  </Step>
+  <Step title="Pick a subcategory">
+    Choose the one that best describes the case.
+  </Step>
+  <Step title="Add justification">
+    Write a short paragraph explaining the reasoning. Future analysts and auditors will read this.
+  </Step>
+  <Step title="Save">
+    The case moves to **Resolved** on the Response queue. The determination is locked into the [audit trail](/case-detail/audit-trail) — no silent changes from here on.
+  </Step>
+</Steps>
+
+## Re-opening a determination
+
+Determinations can be revisited. Re-open the case, pick a new disposition, and supply a reason — the change creates a new audit trail entry rather than overwriting the old one. The original determination stays visible alongside the new one.

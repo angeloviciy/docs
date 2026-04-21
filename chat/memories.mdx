@@ -1,0 +1,45 @@
+---
+title: 'Chat intelligence'
+description: 'Saving, forgetting, and undoing intelligence from the assistant'
+---
+
+The chat pane is one of the ways intelligence is created and managed. An **intelligence item** is a durable observation Conway keeps for future runs and chats — see [Run detail / Intelligence](/run-detail/memories) for the underlying concept.
+
+<Frame>
+  <img src="/images/chat/memories.png" alt="An intelligence chip in the chat panel" />
+</Frame>
+
+## Saving intelligence
+
+Two ways:
+
+- **Ask Conway to remember something.** Say *"Remember that this account belongs to a corporate treasurer — high-value legitimate activity is expected."* Conway confirms in the thread with an intelligence chip showing what was saved and which entity it attaches to.
+- **Use the "Add a note" suggestion** on the Intel tab. Same behaviour, but with the entity already attached.
+
+Good intelligence is **specific**, **factual**, and **attached to a concrete entity**. Broad opinions rarely help the agent.
+
+## Finding intelligence
+
+Intelligence shows up in three places: the **Intelligence tab** on a run (everything the run saved), the dossier of the entity the intelligence is attached to in [Intel](/detection/intel), and in chat itself when you ask *"what do we know about X?"*.
+
+## Forgetting intelligence
+
+Intelligence can be wrong or go stale. Remove an item by saying *"Forget what you remembered about X"* in chat (Conway confirms with a removal chip), or by opening the entity dossier or Intelligence tab and using the remove control on the card.
+
+## The undo window
+
+Right after a save or a forget, the chat shows an **undo** control for a short window. Click it to reverse the action. Once the window closes, one-click undo is gone — you'd need to re-save or re-forget manually.
+
+## What makes good intelligence
+
+Do save as intelligence:
+
+- *"This account is a corporate treasurer; high-value daily activity is expected."*
+- *"The typology ATO via SIM swap has been on the rise since Q1 2026 for our West-coast customer segment."*
+- *"Merchant XYZ is a known legitimate partner; chargebacks from them are typically administrative."*
+
+Don't save as intelligence:
+
+- Opinions without context: *"This is fine."*
+- Things that change frequently: *"Current status: green."* — today's truth is tomorrow's noise.
+- Anything you'd want audited — use a case note instead.

@@ -1,0 +1,26 @@
+---
+title: 'Rules tab'
+description: 'Review rule proposals and monitor rule health'
+---
+
+import ChatReminder from '/snippets/chat-reminder.mdx'
+
+<ChatReminder />
+
+The **Rules** tab is your view into the rules Conway works with — ones it has *proposed* from recent data and ones that are *deployed* and being monitored over time. Toggle between the two using the **PROPOSALS** / **MONITOR** sub-tabs in the top right.
+
+## Proposals
+
+In **PROPOSALS**, Conway shows you the rules its rule-mining phase surfaced from a recent run — candidates it believes would catch a real pattern in the data it just saw. Proposals are grouped into **candidate sets** (one batch per mining run). Click a set to see the individual rules with their precision, coverage, and any overlap between them.
+
+Before accepting a proposal, test it against live data by pasting its SQL into the [query console](/sources/query-console). When a set or rule prompts a question, drag it into chat and ask.
+
+## Monitoring
+
+In **MONITOR**, Conway shows how rules that are already deployed are behaving over time. Each rule has a **health** — *Healthy*, *Drifting*, or *Degraded* — and a **status** — *Active*, *Deprecated*, or *Under Review*. You'll also see charts of precision and coverage over time, with markers showing when a rule was changed.
+
+When you spot a drifting or degraded rule, drag it into the chat pane to ask what changed; the assistant can point at the time slice where precision shifted.
+
+<Note>
+In **Pilot deployments**, continuous rule monitoring is not running. The MONITOR sub-tab shows illustrative data so you can see the interface; it does not reflect the live health of your rules. See [Pilot limitations](/pilot/limitations).
+</Note>

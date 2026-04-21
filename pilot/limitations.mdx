@@ -1,0 +1,52 @@
+---
+title: 'Limitations'
+description: 'Features not available in a Pilot deployment'
+---
+
+A Pilot is focused on detection and investigation. The following parts of Conway are **not available** in your deployment. If you see them referenced elsewhere in this guide, they apply to full deployments only.
+
+## Response is disabled
+
+The **Response** area (case management) is not enabled in a Pilot. That means:
+
+- No case queue, no Kanban/list views, no SLA countdowns.
+- No dispositions (True positive / False positive / Inconclusive) and no subcategories.
+- No RFI (request-for-information) checklist, no audit trail, no case-level entities or findings.
+- Investigation outputs from Detection runs are not promoted into cases.
+
+Everything under the **Case detail** section of this guide — evidence, entities, determination, audit trail — describes the full-deployment workflow and will not appear in your sidebar.
+
+## No continuous rule monitoring
+
+Conway can run rules on a schedule and surface any that drift or start firing differently. In a Pilot:
+
+- The **Rules** tab inside Detection shows you the rules Conway knows about, but they are not being evaluated continuously.
+- There is no monitoring feed for rule changes over time.
+- You can still trigger ad-hoc runs that reason about rules; you just will not receive automatic alerts when rule behavior shifts.
+
+## Only preset playbooks
+
+Playbooks (the automations under the **Automations** tab) are **configured for you by the Conway team** at the start of your Pilot. During the Pilot:
+
+- You will not typically build new playbooks from scratch.
+- The AI-generated playbook flow is available for exploration but new playbooks are usually reviewed with the Conway team before being used in anger.
+- See [Sources configured for you](/pilot/sources-configured) for the list of preset playbooks active in your deployment.
+
+## Narrower set of data sources
+
+Your Pilot is connected to a specific subset of your warehouses and tables — enough to demonstrate Conway's value on the use cases you care about. Adding new sources or tables is a coordinated change with the Conway team, not a self-service action.
+
+## No admin surfaces
+
+The **Integrations** tab (secrets and admin configuration) is visible to admins only and is typically not touched during a Pilot. Any integration changes flow through your Conway contact.
+
+## What still works
+
+Everything else described in this guide applies:
+
+- The full Detection flow — creating runs, reading investigations and reports, triaging the run feed.
+- The Run detail workspace — telemetry, intelligence, overriding verdicts, parent/iteration relationships.
+- The Chat assistant — the fastest way to understand what you are looking at.
+- The Sources screens, in read-only fashion, so you can see what is connected.
+
+If in doubt whether a feature is active for you, check with your Conway contact (see [Contacts](/pilot/contacts)).

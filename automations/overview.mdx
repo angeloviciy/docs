@@ -1,0 +1,27 @@
+---
+title: 'Automations overview'
+description: 'What a playbook is and where playbooks live in Conway'
+---
+
+**Automations** is where you build, edit, and review **playbooks** — reusable recipes Conway runs on a schedule, on a trigger (e.g. a case reaching a specific status), or on demand from chat.
+
+## Where playbooks live
+
+Playbooks are visible from two places that point at the same library — the dedicated Automations landing page (every playbook, including detection-side ones) and the [Automations tab inside Response](/response/automations-tab) (the operational view of playbooks that fire in the response workflow). You don't have to pick "the right place" to go; the list is the same.
+
+Each card shows whether the playbook is **Live** (active and firing) or **Draft** (saved but not firing). A sparkline gives you a rough sense of recent activity, and outcome pills — **Fraud**, **Legit**, **Escalated**, in-flight **Routing…** / **Processing…** — break down recent runs. Use the timeframe toggle (**10d / 30d / 90d**) above the list to widen or narrow the window.
+
+## Live vs. Draft
+
+You move between the two states from inside the builder: **SAVE** keeps your edits without changing state (a Draft stays a Draft, a Live playbook keeps serving the previous version); **PUBLISH** takes a Draft Live, or republishes a Live playbook with new edits.
+
+## Starting a new playbook
+
+Two ways to start:
+
+- **CREATE** — open the builder with a blank canvas. Use this when you already know the phases and routing you want. See [Building a playbook](/automations/building).
+- **GENERATE** — describe the playbook in plain English and let Conway draft it. Use this when you have an intent but not yet a worked pipeline. See [AI-generated playbooks](/automations/ai-generated).
+
+<Note>
+In **Pilot deployments**, playbooks are typically configured for you by the Conway team rather than built from scratch. The **CREATE** and **GENERATE** flows are still available for exploration — see [Pilot limitations](/pilot/limitations) and check with your contact before publishing new playbooks.
+</Note>

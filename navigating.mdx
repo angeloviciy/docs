@@ -1,0 +1,36 @@
+---
+title: 'Navigating the app'
+description: 'The left sidebar, the chat pane on the right, and the settings modal'
+---
+
+Conway's chrome is minimal. A **sidebar** on the left, a **chat pane** on the right, and the page content in the middle — that's it. There's no global top bar. Everything you reach by clicking (nav, settings, theme, system status) lives in the sidebar.
+
+<Frame>
+  <img src="/images/navigating.png" alt="The Conway application shell" />
+</Frame>
+
+## Top-level nav
+
+The top of the sidebar has three nav items — Conway's top-level areas:
+
+- **[Detection](/detection/overview)** (fan icon) → the main hub. Contains the [Runs](/detection/runs), [Reports](/detection/reports), [Rules](/detection/rules), and [Intel](/detection/intel) tabs.
+- **[Response](/response/overview)** (split icon) → case management. Contains the case queue and the [Automations](/response/automations-tab) tab.
+- **[Sources](/sources/overview)** (boxes icon) → data warehouse connections. Contains Warehouses and (for admins) [Integrations](/sources/integrations).
+
+The active item is marked with four thin bracket-style corner ticks around the row — quiet, not a filled highlight.
+
+<Note>
+Not every deployment shows every nav item. Pilot deployments don't show Response, for example. If your sidebar is missing something you read about in this guide, see [Pilot limitations](/pilot/limitations).
+</Note>
+
+## Theme
+
+Three toggles at the bottom of the sidebar — **Sun** (light), **Moon** (dark), **Monitor** (match the OS). When the sidebar is collapsed, they compress into a single icon that cycles light → dark → system on each click.
+
+## Settings
+
+Click the **gear icon** at the bottom of the sidebar to open **Settings**. It's a modal rather than its own page, and it's where you manage your account and sign out. Admins see an extra **WORKOS PORTAL** button for managing the organisation in the identity provider — most analysts can ignore it.
+
+## The chat pane
+
+The chat pane sits to the right of the page content on most screens — it's always present, not a button you click to open. Drag any card (a run, a report, an entity, a case, a rule) onto it to attach, then ask your question. The Automations landing page hides the chat by default so the playbook list gets full width; it comes back automatically when you leave. See the [Chat assistant overview](/chat/overview) for how to get the most out of it.
