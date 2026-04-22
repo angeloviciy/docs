@@ -1,0 +1,28 @@
+---
+title: 'Connect Redshift'
+description: 'Add an Amazon Redshift cluster as a Conway data source.'
+---
+
+Connecting Redshift is a short form: point Conway at your cluster, supply credentials scoped to just the tables you want analyzed, and test the connection before any live run.
+
+<Frame>
+  <img src="/images/admin/connect-redshift/overview.png" alt="The Redshift connection dialog" />
+</Frame>
+
+<Steps>
+  <Step title="Open the Add Data Source dialog">
+    From **Sources**, click **Add Data Source** and pick Redshift.
+  </Step>
+
+  <Step title="Fill in cluster details">
+    Name the connection, then supply host, port (usually `5439`), database, schema, username, and password. The user Conway authenticates as should only have the privileges it needs to read the tables you want analyzed — avoid superusers and broadly privileged accounts.
+  </Step>
+
+  <Step title="Submit">
+    Click **Add Data Source**. The connection appears on the Sources page as a card with a health indicator.
+  </Step>
+
+  <Step title="Test it">
+    Run a [test connection](/admin/test-source) before any analyst kicks off a live run.
+  </Step>
+</Steps>

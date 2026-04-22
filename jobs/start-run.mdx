@@ -1,0 +1,32 @@
+---
+title: 'Start an investigation run'
+description: 'The inputs you choose at launch and what each one does to the run.'
+---
+
+A run is one pass of Conway's agent over a chosen table with a stated objective. Launch one from **DRAFT RUN** on **Detection → Runs**; the choices in that dialog decide what the agent spends compute on and what the resulting investigations cover. Tighter inputs produce fewer, deeper investigations; broad inputs produce many shallow ones.
+
+<Frame>
+  <img src="/images/jobs/start-run/overview.png" alt="The Draft Run dialog on the Detection Runs tab" />
+</Frame>
+
+## What each input does
+
+**Table.** The run scope is exactly the table you pick; the agent cannot reach tables you did not select. A question that spans two tables needs a run per table, or a playbook that fans out across both. Pick the table your question actually lives in: an account-takeover objective on an auth-events table, a transactional pattern on a transactions table.
+
+**Objective.** A free-text prompt in the analyst's words that states what you are looking for, the time window, and any constraints that should narrow the work. Specificity trades breadth for depth. A tight prompt like *"find possible ATO via SIM swap in the last 7 days, focusing on accounts with recent device changes"* produces a handful of detailed investigations on one hypothesis; an open prompt like *"find fraud"* produces many shallow investigations and spends compute everywhere.
+
+**Time window.** Named inside the objective. Shorter windows run faster and usually surface sharper patterns, because recency reduces the base-rate noise the agent sifts through. A 7-day window is a reasonable default for most threat types; stretch it only when the signal you want lives in low-frequency activity.
+
+**Phases the agent runs.** Chosen by the agent from the objective and the data, not set directly. Some runs skip rule mining entirely; others spend most of their time in EDA. You influence the mix through the objective — *"propose rules that would catch this"* asks for rule mining explicitly.
+
+## What to do next
+
+When the run completes, investigations land on the Reports grid and the run detail page surfaces the full agent trace. Common follow-ups:
+
+- [Triage the investigations](/jobs/triage) as they land.
+- [Audit the run](/jobs/audit-run) if any verdict looks off.
+- Relaunch with a tighter objective if the first pass was too broad; iteration is expected.
+
+<Tip>
+**Drafting the objective.** Before clicking launch, drag a past run that produced useful investigations into chat and ask *"what objective would you tighten mine to, given what worked on this one?"* The assistant knows which phrasings have historically produced sharp investigations on your data.
+</Tip>

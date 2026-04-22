@@ -1,0 +1,40 @@
+---
+title: 'Record a determination'
+description: 'Close a case with a disposition and justification.'
+---
+
+A determination is the final call that closes a case: the top-level disposition, the subcategory that narrows *why*, and a short justification future analysts and auditors will read. Saving the determination moves the case to **Resolved** on the queue and locks the record into the audit trail.
+
+<Note>
+Cases are not available on Pilot deployments.
+</Note>
+
+<Frame>
+  <img src="/images/jobs/record-determination/overview.png" alt="The Determination tab with a subcategory selected" />
+</Frame>
+
+<Steps>
+  <Step title="Confirm the checklist is done">
+    Open **RFI / Checklist** and verify every required item is ticked. The Determination tab will not accept a close while required items remain open — resolve them or mark the case **Inconclusive** with a reason.
+  </Step>
+
+  <Step title="Open the Determination tab">
+    Switch to **Determination**. The three top-level options sit across the top: **TRUE POSITIVE**, **FALSE POSITIVE**, **INCONCLUSIVE**.
+  </Step>
+
+  <Step title="Pick a disposition and subcategory">
+    Select the top-level disposition that matches the evidence, then the subcategory that narrows it. Subcategories include *ATO via SIM swap*, *ATO via phishing*, *Insider threat* (True positive); *Legitimate user*, *Known travel*, *VPN/proxy usage*, *Device change* (False positive); and *Insufficient evidence*, *Awaiting information* (Inconclusive). The subcategory feeds back into Conway's models — be specific.
+  </Step>
+
+  <Step title="Write a justification and save">
+    Write a short paragraph explaining the reasoning and the decisive evidence. Click **SAVE** to close the case. The determination, your reasoning, your name, and the timestamp are written to the audit trail.
+  </Step>
+</Steps>
+
+## Re-opening a determination
+
+Determinations are revisitable. Re-open the case, pick a new disposition, and supply a reason — the change creates a new audit-trail entry alongside the old one rather than overwriting it. Every prior determination remains visible for auditors.
+
+<Tip>
+**Consistency check.** Before clicking save, drop the case into chat and ask *"is this determination consistent with how we closed similar cases in the last quarter?"* The assistant surfaces the handful of precedents closest to this one so you can confirm the subcategory fits.
+</Tip>

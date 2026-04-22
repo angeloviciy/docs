@@ -1,27 +1,21 @@
 ---
 title: 'Core concepts'
-description: 'The terms you will see throughout Conway, in plain English'
+description: 'The vocabulary Conway uses'
 ---
 
-Conway has a small set of nouns that show up on almost every screen. Learn these once and the rest of this guide is easier to follow.
+Conway carries every run from detection to decision on its own. The sections below define the terms Conway uses within its platform.
 
 ## Run
 
-A **run** is one pass of Conway's agent over your data with a stated objective — for example, "look for unusual card-not-present activity in the last 7 days." A run is the unit of work you kick off from the Detection hub.
-
-A run produces one or more **investigations** while it executes, plus **telemetry** (a log of the queries and tools it used along the way). When it finishes, the run is marked `completed` or `failed`.
+A **run** is one pass of Conway's agent over a table with a stated objective — for example, *"look for unusual card-not-present activity in the last seven days."* You launch runs from the Detection hub. A run produces one or more investigations and ends in `completed` or `failed`.
 
 ## Investigation
 
-An **investigation** is a single focused look at one thing Conway found during a run — for example, a specific account, a cohort, or a pattern that warrants closer examination. A run may produce many investigations, or just one.
-
-Each investigation ends with a **verdict** and produces a **report**.
+An **investigation** is one focused look at something the agent surfaced inside a run: a specific account, a cohort, a pattern. Every investigation ends with a verdict and produces a report.
 
 ## Report
 
-The **report** is the written output of an investigation — the markdown narrative that explains what the agent looked at, what it found, and why it reached its conclusion. You read reports in the Detection **Reports** tab and in the run detail view.
-
-The distinction matters: an *investigation* is the UI object (it has a verdict, a severity, an entity list). A *report* is the prose inside it.
+The **report** is the written output of an investigation — the markdown that explains what was examined, what was found, and why the agent reached its conclusion. The investigation is the UI object; the report is the prose inside it.
 
 ## Verdict
 
@@ -29,40 +23,40 @@ Every investigation carries one of three verdicts.
 
 <Snippet file="verdict-values.mdx" />
 
-You can **override** a verdict from the run detail view if you disagree with Conway's call.
+You can **override** a verdict from the investigation drawer if you disagree with Conway's call. The override flow is documented alongside [Audit a run](/jobs/audit-run), since an audit is usually what justifies one.
 
 ## Entity
 
-An **entity** is a real-world thing Conway identifies across runs — a person, an organization, an account, a location, or a **typology** (a pattern of behavior, like "ATO via SIM swap"). Entities persist across investigations: if the same account shows up in two different runs, both point at the same entity.
-
-The **Intel** tab in Detection is your library of entities. Each entity has its own dossier with history and connections.
+An **entity** is a real-world thing Conway tracks across runs: a person, an organization, an account, a location, or a **typology** (a recurring behavior pattern, like *ATO via SIM swap*). The same account in two different runs points at the same entity. The **Intel** tab is the library of entities.
 
 ## Intelligence
 
-An **intelligence item** is an observation Conway saved about something it investigated — a note on an entity, a pattern worth remembering, a baseline value. Intelligence lets Conway get smarter over time: a future investigation about the same entity benefits from what the agent previously learned.
-
-You can view intelligence on the run detail **Intelligence** tab and on individual entity dossiers.
+An **intelligence item** is an observation Conway saved about an entity for future runs. Intelligence is how the agent gets smarter about your data over time: a second run that touches the same account benefits from what the first already learned.
 
 ## Case
 
-A **case** is the workspace an analyst uses to triage a real incident end to end. Where a run is Conway asking *"is there something here?"*, a case is an analyst (you) deciding *"what are we going to do about it?"*. Cases have a status, an SLA, assigned analysts, a determination, and an audit trail.
-
-Cases live under **Response**.
+A **case** is the workspace an analyst uses to work a real incident end to end. Where a run is Conway asking *"is there something here?"*, a case is an analyst deciding *"what are we going to do about it?"*. Cases have a status, an SLA, an assigned owner, a determination, and an audit trail. Cases live under **Response**.
 
 <Note>
-Cases are **not available in Pilot deployments**. See [Pilot limitations](/pilot/limitations).
+Cases are not available on Pilot deployments.
 </Note>
 
-## Disposition (case determination)
+## Disposition
 
-When you close a case, you record a **disposition** — the final call on whether the activity was real. The three top-level dispositions are:
+When you close a case, you record a **disposition** — the final call on whether the activity was real. Three top-level values, each with UI-visible subcategories:
 
 - **True positive** — the activity was of concern and action was warranted.
 - **False positive** — the activity turned out to be benign.
 - **Inconclusive** — evidence was insufficient to decide either way.
 
-Each disposition has UI-visible subcategories (e.g. *ATO via SIM swap*, *Legitimate user*, *Insufficient evidence*) so you can record *why* at the same time.
+<Note>
+Dispositions are not available on Pilot deployments, since Pilots do not have cases to close.
+</Note>
 
-## Playbook (automation)
+## Playbook
 
-A **playbook** is a reusable detection or response recipe — a sequence of phases that Conway runs when triggered. The **Automations** tab is where playbooks are built and edited. In Pilot deployments, playbooks are usually preset by the Conway team rather than built from scratch.
+A **playbook** is a reusable recipe that fires on a schedule, on a case event, or on demand. Playbooks are configured by the Conway team in Pilot and early full deployments — analysts see their outcomes on cases but do not typically author them.
+
+<Note>
+Playbooks are not available on Pilot deployments.
+</Note>

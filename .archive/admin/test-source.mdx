@@ -1,0 +1,33 @@
+---
+title: 'Test a source'
+description: 'Confirm Conway can reach, authenticate against, and read a connected warehouse.'
+---
+
+A source test confirms Conway can open a connection to the warehouse, authenticate with the saved credentials, list the configured scope, and run a trivial query against one table. Run it after every connection change — new credentials, a schema move, a role adjustment — before any analyst launches a live run.
+
+<Steps>
+  <Step title="Open the source card">
+    On **Sources**, find the warehouse card. The card shows the connection name, type (Snowflake or Redshift), authentication method, and a health indicator.
+  </Step>
+
+  <Step title="Click Test source">
+    The button sits on the card. The card overlays progress while the probe runs — green on success, red on failure.
+  </Step>
+
+  <Step title="Read the result">
+    On success, the warehouse is ready for live runs. On failure, click the red overlay to expand the warehouse's error message.
+  </Step>
+</Steps>
+
+## Common failures
+
+Most failed tests fall into four categories. Work through them in order:
+
+- **Authentication failed.** Wrong password, expired OAuth token, or key-pair mismatch. Re-open the source and re-enter the credentials.
+- **Missing privileges.** The user authenticates but cannot see the configured database, schema, or tables. Use **Edit scope** on the card to narrow the scope to what the role can actually see, or widen the role in the warehouse.
+- **Network unreachable.** Conway cannot reach the warehouse from its network. Confirm the host and port are correct; if they are, the warehouse admin needs to open network access.
+- **Latency too high.** The probe timed out. Usually transient — retry first. If it persists, escalate to the warehouse admin.
+
+<Note>
+On Pilot deployments, failing tests go directly to your Conway contact rather than self-service fixes.
+</Note>

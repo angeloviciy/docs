@@ -1,28 +1,28 @@
 ---
 title: 'Your Pilot deployment'
-description: 'What a Conway Pilot is and what it does (and does not) include'
+description: 'What a Conway Pilot is and what it does (and does not) include.'
 ---
 
-You are working with a **Pilot deployment** of Conway. A Pilot is a scoped, time-boxed version of the product configured for your organization so your team can evaluate Conway against real data without running the full platform.
-
-Compared to a full deployment, a Pilot intentionally focuses on a narrow slice of Conway's functionality. The rest of this reference guide describes every Conway feature — not all of them will be present in your Pilot.
+A Pilot is a scoped, time-boxed version of Conway configured for your organization so your team can evaluate the product against real data without running the full platform. The rest of the guide describes every Conway feature; this page summarizes what applies to your deployment.
 
 ## What a Pilot gives you
 
-- A working Detection hub wired to one or more of your data warehouses.
-- A fixed set of automations (playbooks) preconfigured by the Conway team for your use cases.
-- Investigation outputs — runs, reports, and the chat assistant — so you can see how Conway reasons about your data end to end.
+- A working **Detection** hub wired to one or more of your data warehouses.
+- Investigation outputs — runs, reports, and the chat assistant — so you see how Conway reasons about your data end to end.
 - A dedicated point of contact from the Conway team for support, access changes, and incidents.
 
 ## What a Pilot does not include
 
-See [Limitations](/pilot/limitations) for the full list. At a high level: the **Response** workflow (cases, dispositions, SLAs) and continuous **rule monitoring** are not part of a Pilot. Those features become available in a full deployment.
+A Pilot focuses on detection and investigation. The full platform extends from there into:
 
-## Pages in this tab
+- **Cases and dispositions.** Every investigation promotes into a case with an SLA, a checklist, RFIs, and a full audit trail so your team closes incidents end to end rather than stopping at investigation output.
+- **Continuous rule monitoring.** Rules are evaluated on a schedule and any drift is flagged automatically, so detection strategy degradation surfaces without manual review.
+- **Unattended playbooks.** Packaged sequences run trigger to disposition without a human in the loop, letting Conway act on its own reasoning within your SLA.
+- **Broader source coverage.** Self-service connection of warehouses and tables across your entire data estate, not a coordinated change for every new source.
+- **Admin self-service.** Direct control of integrations, identity, and source connections from the admin console rather than routing every configuration change through your Conway contact.
 
-The rest of the pages in this tab are customized by the Conway team for your organization:
+## What still applies
 
-- [Limitations](/pilot/limitations) — what the Pilot does not do.
-- [Contacts](/pilot/contacts) — who to reach out to.
-- [Sources configured for you](/pilot/sources-configured) — which warehouses and tables are already connected.
-- [Your terminology](/pilot/terminology) — how your team's internal terms map to Conway's.
+Everything outside the list above works as described in the main guide: [triage](/jobs/triage), [auditing runs and overriding verdicts](/jobs/audit-run), [managing intelligence](/jobs/manage-intelligence), and the [chat assistant](/chat-overview). Runs themselves are launched by the Conway team on your agreed-upon cadence; you work the investigations they produce.
+
+If in doubt whether a feature is active for you, check with your Conway contact.

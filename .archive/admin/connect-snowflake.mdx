@@ -1,0 +1,32 @@
+---
+title: 'Connect Snowflake'
+description: 'Add a Snowflake warehouse as a Conway data source.'
+---
+
+Snowflake is the most common warehouse connected to Conway. You authenticate with OAuth or a key pair, scope the connection to the warehouse, database, and schema Conway should read from, and assign a Snowflake role with just enough privileges to see the tables you want analyzed.
+
+<Frame>
+  <img src="/images/admin/connect-snowflake/overview.png" alt="The Snowflake connection dialog with authentication tabs" />
+</Frame>
+
+<Steps>
+  <Step title="Open the Add Data Source dialog">
+    From **Sources**, click **Add Data Source** in the top right and pick Snowflake.
+  </Step>
+
+  <Step title="Pick an authentication method">
+    Two tabs at the top of the dialog: **snowflake-oauth** (browser-based OAuth, best when Snowflake is federated through your IdP) and **snowflake-keypair** (key-pair auth, best for service-to-service connections). Password auth is available as a fallback in environments that support neither.
+  </Step>
+
+  <Step title="Fill in account details">
+    Name the connection so analysts recognize it in the source selector. Supply the account, warehouse, database, schema, and role. The role governs what Conway can read — **ACCOUNTADMIN**, **SECURITYADMIN**, **ORGADMIN**, and **GLOBALORGADMIN** are blocked outright; **PUBLIC** is usually too broad. Pick a role scoped to the specific tables you want analyzed.
+  </Step>
+
+  <Step title="Connect">
+    Click **Connect with OAuth** and authorize in the pop-up, or **Add Data Source** for key-pair auth with your public key attached.
+  </Step>
+
+  <Step title="Test it">
+    Run a [test connection](/admin/test-source) before any analyst kicks off a live run. The test confirms Conway can authenticate, list the configured scope, and run a trivial query.
+  </Step>
+</Steps>

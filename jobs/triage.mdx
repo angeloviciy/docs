@@ -1,0 +1,40 @@
+---
+title: 'Triage investigations'
+description: 'Work the Reports grid and push every positive and uncertain investigation to a firm outcome.'
+---
+
+Positive and uncertain investigations both land on the **Reports** grid for a human to examine. A positive is the agent concluding the activity is of concern; an uncertain is the agent unable to conclude either way. This page covers working each batch and pushing every row to a firm outcome.
+
+<Frame>
+  <img src="/images/jobs/triage/overview.png" alt="The Reports tab in Detection, filtered by verdict" />
+</Frame>
+
+## What is a verdict
+
+A verdict is Conway's call on a single investigation, stamped at the end of the run that produced it. Every investigation carries one of three:
+
+- **Positive** — The agent concluded the activity is of concern.
+- **Negative** — The agent concluded the activity is not of concern.
+- **Uncertain** — The agent could not conclude either way.
+
+Negative verdicts close automatically and do not appear on the grid unless you filter for them. Triage is the job of working the two that need a human: positive and uncertain.
+
+## What to do next
+
+Open **Detection → Reports** and use **Filter** to tick **positive** or **uncertain**. Work one verdict at a time; the decision on each row differs between the two. Sort by date to surface the newest rows first.
+
+**What to examine.** Click a row to open the investigation drawer. Start with the summary and verdict section, which carries the driving evidence for a positive or the missing-evidence note for an uncertain. Expand individual findings only when a row warrants closer examination. Bracketed references like `<[entity:…]>` and `<[report:…]>` open the referenced object in an overlay without navigating away.
+
+**For a positive label, try to disprove the case.**
+Read the driving evidence, then actively look for findings or analysis that would refute the agent's conclusion: an alternate explanation for the activity, an exonerating signal the agent did not weigh, or a telemetry error in the run that changed how the data was read.
+
+If nothing refutes the call, keep the positive and [promote to a case](/jobs/open-case) to work it end to end. If something does, override to negative and record what refuted the call in your override note, with reference to your [audit of the run](/jobs/audit-run) if the weakness was in how the agent read the data.
+
+**For an uncertain label, try to prove the case.**
+The agent reached uncertain because it could not marshal enough evidence to close the investigation positively. Your job is to actively look for the missing piece that would warrant closing it as a positive: context the agent did not have access to, an entity relationship or history that tips the evidence, or a recent case or RFI outcome the agent did not consume.
+
+If you find that evidence, override to positive and [promote to a case](/jobs/open-case) if it needs end-to-end work. If you cannot find it, override to negative — an uncertain with no supporting evidence found is a rejection, not a parking lot. When the evidence you need lives outside Conway's data (a customer response, an enrichment lookup, a judgment call that needs a second analyst), [promote to a case](/jobs/open-case) directly rather than forcing a verdict.
+
+<Tip>
+**Shortcut.** Before opening rows one at a time, ask the chat *"what's the shape of today's filtered set: any clusters, repeated entities, unusual volume?"* For uncertains specifically, clusters of the same missing-evidence reason often resolve as a batch rather than one row at a time.
+</Tip>

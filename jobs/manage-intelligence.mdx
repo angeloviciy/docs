@@ -1,0 +1,37 @@
+---
+title: 'Manage intelligence'
+description: 'Save, remove, and audit the observations Conway keeps about your entities.'
+---
+
+Intelligence is the durable context Conway keeps about your data: notes on an entity, baselines, patterns worth remembering across runs. A well-maintained intelligence library is what turns a second run on the same account from *"start from zero"* into *"build on what the agent already learned."*
+
+<Frame>
+  <img src="/images/jobs/manage-intelligence/overview.png" alt="Intelligence items on an entity dossier" />
+</Frame>
+
+## What the dossier carries
+
+Intelligence attaches to entities, and the entity's dossier is where everything Conway knows about that entity converges. Open **Detection → Intel**, filter by type (**Person**, **Org.**, **Account**, **Location**, or **Typology**), and search by name, identifier, or attribute. The dossier shows the entity's description, every past investigation it has appeared in with each verdict, every intelligence item saved about it, and its connections to other entities (the account that belongs to a person, the person tied to a location).
+
+New investigations inherit this history, so examining the dossier is often the first move before [overriding a verdict](/jobs/audit-run) or [opening a case](/jobs/open-case). You rarely need to open Intel manually — from any investigation or case, drag the entity card into chat and ask *"what do we know about this entity, and what past investigations mention it?"* to pull the dossier inline.
+
+## Saving intelligence
+
+Two ways to save an observation:
+
+- **From chat.** With an entity or investigation attached, say *"remember that this account belongs to a corporate treasurer — high-value legitimate activity is expected."* Conway confirms with an intelligence chip showing what was saved and to which entity.
+- **From the Intel tab.** Open the entity dossier, click **Add a note**, and write the observation. Both paths produce the same item.
+
+Good intelligence is **specific**, **factual**, and **attached to a concrete entity**. Broad opinions (*"this is fine"*) and fast-changing state (*"current status: green"*) rarely help future runs.
+
+## Finding intelligence
+
+An intelligence item surfaces in three places: on the **Intelligence** tab of the run that produced it, on the dossier of the entity it attaches to, and in chat whenever you ask *"what do we know about X?"*.
+
+## Removing intelligence
+
+Intelligence goes stale. Remove an item by saying *"forget what you remembered about X"* in chat (Conway confirms with a removal chip) or by opening the entity dossier and using the remove control on the card. Both actions give you a short undo window — click **Undo** to reverse the change before it closes.
+
+<Tip>
+**Audit pattern.** Once a quarter, drop a frequently-seen entity into chat and ask *"list every piece of intelligence on this entity and flag anything that is likely out of date."* It is the fastest way to keep the library lean without opening dossiers one at a time.
+</Tip>

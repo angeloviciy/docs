@@ -17,74 +17,36 @@
             "group": "Getting started",
             "pages": [
               "welcome",
-              "navigating",
-              "core-concepts"
+              "core-concepts",
+              "chat-overview"
             ]
           },
           {
-            "group": "Detection",
+            "group": "Triage",
             "pages": [
-              "detection/overview",
-              "detection/runs",
-              "detection/reports",
-              "detection/rules",
-              "detection/intel"
+              "jobs/triage"
             ]
           },
           {
-            "group": "Run detail",
+            "group": "Investigate",
             "pages": [
-              "run-detail/overview",
-              "run-detail/lifecycle",
-              "run-detail/telemetry",
-              "run-detail/investigations",
-              "run-detail/memories",
-              "run-detail/parent-iterations"
+              "jobs/start-run",
+              "jobs/audit-run"
             ]
           },
           {
-            "group": "Response",
+            "group": "Case work",
             "pages": [
-              "response/overview",
-              "response/automations-tab"
+              "jobs/open-case",
+              "jobs/work-case",
+              "jobs/record-determination"
             ]
           },
           {
-            "group": "Case detail",
+            "group": "Knowledge",
             "pages": [
-              "case-detail/overview",
-              "case-detail/evidence",
-              "case-detail/entities-findings",
-              "case-detail/determination",
-              "case-detail/rfi-checklist",
-              "case-detail/audit-trail"
-            ]
-          },
-          {
-            "group": "Automations",
-            "pages": [
-              "automations/overview",
-              "automations/building",
-              "automations/ai-generated"
-            ]
-          },
-          {
-            "group": "Sources",
-            "pages": [
-              "sources/overview",
-              "sources/snowflake",
-              "sources/redshift",
-              "sources/testing",
-              "sources/query-console",
-              "sources/integrations"
-            ]
-          },
-          {
-            "group": "Chat assistant",
-            "pages": [
-              "chat/overview",
-              "chat/suggestions",
-              "chat/memories"
+              "jobs/manage-intelligence",
+              "jobs/propose-rule"
             ]
           }
         ]
@@ -95,11 +57,7 @@
           {
             "group": "Pilot deployment",
             "pages": [
-              "pilot/index",
-              "pilot/limitations",
-              "pilot/contacts",
-              "pilot/sources-configured",
-              "pilot/terminology"
+              "pilot/index"
             ]
           }
         ]

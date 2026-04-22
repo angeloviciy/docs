@@ -1,0 +1,33 @@
+---
+title: 'Work a case'
+description: 'Review the evidence, entities, and findings on an open case.'
+---
+
+A case detail page is the single-screen workspace for one incident. This page covers moving through a case in the order most analysts use: evidence and timeline first, then entities and findings, then the checklist that gates closing.
+
+<Note>
+Cases are not available on Pilot deployments.
+</Note>
+
+<Frame>
+  <img src="/images/jobs/work-case/overview.png" alt="A case detail page with the Evidence tab open" />
+</Frame>
+
+Open the case from the **Response** queue. The detail page shows a header (title, editable summary, severity, owner, SLA), a command bar with **Action**, **RFI**, and **Note**, and six tabs below for working the case. Most analysts work them in order.
+
+**Evidence** is a chronological timeline of everything attached to the case: uploaded documents, automatic enrichments, linked investigations, and analyst actions. Click any entry to expand it in place; use **Add evidence** above the timeline to attach documents, screenshots, or emails.
+
+**Entities / Findings** shows every person, account, organization, location, and typology attached to the case as entity cards, with a network graph above them visualizing how they connect. Below the entities, the findings section lists the agent's observations with links back to the evidence that supports each one; tick each finding as you review it.
+
+**RFI / Checklist** is worked top to bottom — the order usually reflects the order the investigation needs to happen in. Required items must be ticked before the **Determination** tab will accept a close.
+
+When a checklist item needs an answer from a customer, teammate, or internal partner, click **RFI** in the command bar to send a request for information on the channel of your choice; outstanding RFIs are tracked on this tab and block the case from closing until they resolve.
+
+## What to do next
+
+- Take an immediate response (**Freeze Account**, **Reset Credentials**, **Block IP**, **Escalate to Tier 2**, or **Flag for Review**) from the **Action** control in the command bar.
+- Close the case with [Record a determination](/jobs/record-determination) once the checklist clears.
+
+<Tip>
+**Shortcut.** Before opening individual findings, drop the case into chat and ask *"summarize the strongest evidence on this case and flag anything missing from the checklist."* The assistant reads across the timeline, the entity graph, and the checklist in one pass.
+</Tip>

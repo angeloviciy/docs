@@ -1,0 +1,38 @@
+---
+title: 'Wire up integrations'
+description: 'Connect Slack, ticketing, and other third-party services.'
+---
+
+Integrations connect Conway to the systems your analysts already use — Slack for RFI messages, a ticketing system for escalations, and similar services. Integrations live on an admin-only tab; analysts see the integrations' outputs (a Slack channel option on the RFI dialog, a Ticket channel) but do not manage the connections themselves.
+
+<Frame>
+  <img src="/images/admin/wire-integrations/overview.png" alt="The Integrations tab on Sources with connected services" />
+</Frame>
+
+<Steps>
+  <Step title="Open Sources → Integrations">
+    Click **Sources** in the sidebar, then the **Integrations** tab. Analysts without admin privileges see *"Contact your administrator to manage integrations"* here; admins see the integration list.
+  </Step>
+
+  <Step title="Click Add integration">
+    The dialog lists the services Conway supports: Slack, ticketing providers, and others. Pick the one you want to connect.
+  </Step>
+
+  <Step title="Authenticate">
+    Most integrations use OAuth — the dialog opens the provider's consent screen in a pop-up and returns you when the provider redirects back. A few integrations ask for an API token inline instead; paste it and submit.
+  </Step>
+
+  <Step title="Confirm the integration appears in the analyst UI">
+    Connecting Slack makes **Slack** appear as a channel option in the RFI dialog; connecting a ticketing provider makes **Ticket** selectable. Confirm by opening an existing case and checking the RFI dialog shows the new channel.
+  </Step>
+</Steps>
+
+## Common integrations
+
+- **Slack** — powers the Slack channel on RFIs. Without it, analysts cannot send RFIs through Slack.
+- **Identity provider (via WorkOS)** — controls who can sign in. Managed through the **WORKOS PORTAL** in Settings. See [Federate your identity provider](/admin/federate-identity).
+- **Ticketing** — powers the Ticket channel on RFIs, so analyst asks turn into tickets in your system of record.
+
+## Handing off admin duties
+
+When transferring admin responsibility, walk the new admin through this tab — which integrations are live, which would need reconfiguration, and who owns the external accounts Conway is connected to. Only admins and owners should be making changes here.

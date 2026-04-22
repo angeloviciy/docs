@@ -1,0 +1,28 @@
+---
+title: 'Invite analysts and assign roles'
+description: 'Add members to Conway and pick the role that fits their work.'
+---
+
+Conway's roles separate the analyst work (reading investigations, working cases) from the admin work (connecting sources, managing integrations, inviting members). Most new members should land on an analyst role; only the one or two people who operate Conway for your organization need admin.
+
+<Steps>
+  <Step title="Open the WorkOS portal">
+    From Conway, click the gear icon and **WORKOS PORTAL** in Settings. Membership is managed in the portal rather than inside Conway so invite flow and SSO stay in one place.
+  </Step>
+
+  <Step title="Invite the member">
+    In the portal, click **Invite member** and supply their work email. The invite email sends immediately. If your IdP is federated, the invitee signs in through SSO; if not, they set a password on first visit.
+  </Step>
+
+  <Step title="Pick the role">
+    Conway exposes three roles: **Analyst** (reads investigations, works cases, uses chat), **Admin** (everything an analyst does plus sources, integrations, and member management), and **Owner** (the account holder, same as admin with billing and organization deletion). Start new members on Analyst unless you have a concrete reason to do otherwise.
+  </Step>
+
+  <Step title="Confirm the invite">
+    The invitee receives the email, signs in, and lands on Detection with the role you picked. You can revisit the portal to change a role later — the change takes effect on their next sign-in.
+  </Step>
+</Steps>
+
+## Removing a member
+
+Remove the user from the WorkOS portal. Their next sign-in attempt is rejected; any cases they owned remain on the queue and should be reassigned from the **Owner** field on each case. You can run one chat prompt per analyst — *"which open cases is X the owner of?"* — before removing them so nothing goes quiet.

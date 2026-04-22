@@ -1,0 +1,29 @@
+---
+title: 'Open a case from an investigation'
+description: 'Promote an investigation into the case queue.'
+---
+
+A case is the workspace where an investigation gets worked end to end: evidence assembled, checklist run, RFIs sent, disposition recorded. Promoting an investigation to a case moves the work from Detection (*"is there something here?"*) into Response (*"what are we going to do about it?"*).
+
+<Note>
+Cases are not available on Pilot deployments. Skip this page if you are on a Pilot.
+</Note>
+
+<Frame>
+  <img src="/images/jobs/open-case/overview.png" alt="The Open Case affordance inside an investigation drawer" />
+</Frame>
+
+Open the investigation from **Detection → Reports** (or from a run's **Investigations** tab), and click **Open Case** in the drawer's action bar. The new case pre-fills with the investigation's title, summary, verdict, and entities, plus a severity Conway inferred from the evidence.
+
+Override the severity if your read differs, assign the case to yourself or to a teammate (unassigned cases land in the **Open** column of the Response queue until someone picks them up), and click **CREATE CASE**. Conway moves you to the case detail page and records the promotion on the investigation's audit trail, with the report linked so future analysts can click back to the original evidence.
+
+## What to do next
+
+You are now in case mode. From here:
+
+- [Work the case](/jobs/work-case) — review the evidence, findings, and entity graph; tick the checklist.
+- [Record a determination](/jobs/record-determination) once the checklist clears.
+
+<Tip>
+**Shortcut.** From chat, with an investigation attached, *"open a case for this, assign it to me, and set severity to High"* does the same thing without leaving the chat pane. The draft opens pre-filled for you to confirm.
+</Tip>

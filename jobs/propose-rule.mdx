@@ -1,0 +1,36 @@
+---
+title: 'Review a rule proposal'
+description: 'Evaluate and accept the rules Conway mines from a run.'
+---
+
+Conway's rule-mining phase produces candidate rules — SQL predicates the agent believes would catch a real pattern in data it just saw. Proposals are not deployed automatically; a human reviews precision, coverage, and overlap before accepting one into production.
+
+<Frame>
+  <img src="/images/jobs/propose-rule/overview.png" alt="The PROPOSALS sub-tab under Rules with a candidate set open" />
+</Frame>
+
+<Steps>
+  <Step title="Open Detection → Rules → PROPOSALS">
+    Click **Detection** in the sidebar, then **Rules**, then the **PROPOSALS** sub-tab in the top right. Proposals are grouped into **candidate sets**, one batch per mining run.
+  </Step>
+
+  <Step title="Open a candidate set">
+    Click a set to see its rules. Each rule card shows precision, coverage, and any overlap with other candidates in the same set. Overlap matters: two rules that catch the same activity add noise, not signal.
+  </Step>
+
+  <Step title="Test the rule against live data">
+    Copy the rule's SQL into the query console on the source it was mined from. Running it against today's data tells you whether the precision and coverage Conway reported still hold. A rule that looked good on last week's data but matches nothing today is not worth accepting.
+  </Step>
+
+  <Step title="Accept or reject">
+    Use the card's **Accept** or **Reject** control. Accepted rules are deployed and start appearing under **MONITOR**. Rejected rules stay in the set for the audit trail but do not deploy.
+  </Step>
+</Steps>
+
+<Note>
+On Pilot deployments, continuous rule monitoring is not enabled. The **MONITOR** sub-tab shows illustrative data rather than live health.
+</Note>
+
+<Tip>
+**Sanity check.** Drag a candidate set into chat and ask *"which of these rules would have caught last month's Positive investigations, and which add nothing the others don't already catch?"* Conway cross-references each rule against the recent history and collapses the decision into a paragraph.
+</Tip>

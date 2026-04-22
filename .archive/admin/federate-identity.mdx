@@ -1,0 +1,32 @@
+---
+title: 'Federate your identity provider'
+description: 'Connect Conway to your SSO so analysts sign in with their work identity.'
+---
+
+Conway uses WorkOS for single sign-on. Federating your identity provider (Okta, Google Workspace, Azure AD, and others) means analysts sign in with their existing work accounts rather than managing a separate Conway password, and admins manage membership from one place.
+
+<Frame>
+  <img src="/images/admin/federate-identity/overview.png" alt="The WorkOS portal linked from Conway Settings" />
+</Frame>
+
+<Steps>
+  <Step title="Open the WorkOS portal">
+    Sign in to Conway as an admin, click the gear icon at the bottom of the sidebar, and click **WORKOS PORTAL** in the Settings modal. The portal opens in a new tab scoped to your organization.
+  </Step>
+
+  <Step title="Pick your identity provider">
+    In the portal, choose your IdP from the list (Okta, Google Workspace, Azure AD, OneLogin, and others). WorkOS walks you through the connection steps specific to that provider — typically an app registration in the IdP and an ACS URL you paste back into WorkOS.
+  </Step>
+
+  <Step title="Test with your own account">
+    Once the connection is live, sign out of Conway and sign back in through the IdP. You should land on the Detection hub with the same account you started with, now authenticated through SSO.
+  </Step>
+
+  <Step title="Enforce SSO for your organization">
+    Back in the WorkOS portal, enable **Require SSO**. Non-SSO sign-ins are blocked after this, so confirm every active admin has tested SSO first.
+  </Step>
+</Steps>
+
+## What to do next
+
+With SSO live, you are ready to [invite analysts](/admin/invite-analysts) and assign roles. New members sign in through your IdP and inherit whatever role you pick; removing someone from the IdP removes their Conway access on their next sign-in attempt.

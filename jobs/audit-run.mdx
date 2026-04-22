@@ -1,0 +1,46 @@
+---
+title: 'Audit a run'
+description: 'Inspect the reasoning behind a verdict and override it if the evidence does not hold.'
+---
+
+Telemetry is the chronological audit trail of a run: every tool call, every SQL query, every intermediate result, in the order the agent executed them. Use it when you want to see the reasoning behind a verdict step by step, reproduce a query against the warehouse yourself, or diagnose why a run failed. The most common follow-on to an audit is a verdict override when the evidence does not support the agent's call — that flow is covered below.
+
+<Frame>
+  <img src="/images/jobs/audit-run/overview.png" alt="The Telemetry tab on a run detail page, mid-run" />
+</Frame>
+
+## Reproduce a query
+
+The chronological audit lives on the **Telemetry** tab of the run detail page, opened by clicking the run on **Detection → Runs**. Entries stream from the bottom as the run executes; auto-scroll keeps the newest visible, and scrolling up pauses it so you can review earlier steps. Each entry is one action the agent took: **Query** steps are the SQL it issued, **Analysis** steps are its reasoning over pulled data, **Investigation** steps mark where a new investigation opened, and **Intelligence** steps record observations it saved. Phase transitions are marked inline.
+
+To reproduce a specific query, click a **Query** entry to expand it. The panel shows the exact SQL the agent issued and a preview of the result it got back. Copy the SQL, open the query console on the source the run was wired to, and paste it in. Running the query yourself is the shortest path from *"the agent says X"* to *"I confirmed X against the warehouse."*
+
+## Debugging a failed run
+
+Scroll to the last entry. The step where the run went wrong is almost always at the bottom of the feed; expand it for the error message and the inputs that produced it. Transient failures (network timeout, expired credentials) usually clear on relaunch; structural failures (missing privileges, malformed schema) need the source fixed first by a deployment admin.
+
+## Override a verdict the audit disproves
+
+If the audit convinces you the agent's reasoning or its evidence does not support the verdict it recorded, override the verdict directly on the investigation. Overrides carry forward: the Reports grid, entity dossiers, and chat all reflect the new value. The original verdict, your reason, your name, and the timestamp are written to the investigation's audit trail, so the divergence between the report body and the canonical verdict is never silent.
+
+<Steps>
+  <Step title="Open the investigation">
+    From the run's **Investigations** tab, click the investigation whose verdict the audit undermined.
+  </Step>
+
+  <Step title="Click the verdict chip">
+    The chip sits at the top of the drawer. Clicking it reveals the three verdict options and a justification field.
+  </Step>
+
+  <Step title="Pick the new verdict and write a reason">
+    Select **Positive**, **Negative**, or **Uncertain**, then explain the override in one or two sentences: what the audit revealed, and what the canonical verdict should be. A future analyst reads this to understand why the report body disagrees with the verdict chip.
+  </Step>
+
+  <Step title="Save">
+    The new verdict becomes canonical immediately; the original is preserved on the audit trail.
+  </Step>
+</Steps>
+
+<Tip>
+**Second opinion.** Before saving an override, drop the investigation into chat and ask *"I'm about to override this to Negative — what am I likely missing?"* Conway reads its own report against any intelligence on the involved entities and often surfaces a detail worth considering before you commit.
+</Tip>

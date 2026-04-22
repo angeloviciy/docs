@@ -1,0 +1,28 @@
+---
+title: 'The chat assistant'
+description: 'How to attach artifacts, ask questions, and act on answers.'
+---
+
+The chat assistant is a pane on the right of every Conway screen. It is the fastest way to understand what you are looking at: drag a run, investigation, entity, rule, or case into chat, then ask your question in plain English.
+
+## How to use the chat
+
+**Attach an artifact.** Drag any card on the page onto the chat pane. A pulsing overlay reads **Drop to attach** while you are over the drop target; release the card and it joins the conversation under **Attached Artifacts** above the message input. You can attach runs, investigations, entities, rules, candidate sets, cases, and reports. Use the **Remove** control to detach.
+
+**Ask a question.** With something attached, type your question. Starter prompts appear above the input as **Try these** pills that change based on the page you are on and the artifact you attached. Use a pill when it matches what you want to ask; otherwise write your own. Specific questions produce specific answers. Answers include **citations** back into the artifact; click a cited phrase to jump to the referenced investigation, entity, or telemetry entry.
+
+**Save or remove intelligence.** Say *"remember that…"* to save an observation about an entity for future runs; *"forget what you remembered about…"* removes it. Both give you a short undo window. See [Manage intelligence](/jobs/manage-intelligence) for the full flow.
+
+<Frame caption="The chat pane open beside a run, with an attached artifact and a starter-prompt pill.">
+  <img src="/images/chat/overview.png" alt="The chat panel open next to a run detail page" />
+</Frame>
+
+## What the assistant can and cannot do
+
+The assistant reads. It can summarize investigations, cross-reference entities against past runs, explain why a verdict landed where it did, and walk you through unfamiliar screens. It does not take state-changing actions on its own. Launching runs, modifying cases, publishing playbooks, and editing sources all happen in the UI.
+
+Two exceptions: the **Start a run** suggestion opens the draft-run dialog for you (you still confirm before launching), and you can create or remove **intelligence** about an entity by asking.
+
+<Tip>
+**When in doubt, ask the chat.** Any time a screen, a verdict, or a counter doesn't make sense, drop what you are looking at into the pane and ask. Job pages throughout this guide surface specific prompts as inline `<Tip>` callouts where chat is genuinely faster than the manual flow.
+</Tip>
