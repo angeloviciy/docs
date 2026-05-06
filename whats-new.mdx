@@ -1,0 +1,14 @@
+---
+title: "What's new"
+description: 'Recent changes to Conway, ordered most recent first.'
+---
+
+A running log of changes to the Conway product that affect what analysts and admins see in the UI. Each entry links to the page where the new behavior is documented.
+
+## 2026-04-22 — Rule monitoring and in-place updates
+
+The **Rules** tab now carries a second sub-tab, **MONITOR**, alongside the existing **PROPOSALS**. Active rules surface with a health state — stable, drifting, or degraded — and an inline version history that records every revision the rule has carried, the date it was deployed, and the precision it shipped at.
+
+When a rule degrades, Conway mines a replacement and queues it as an *updated rule* proposal that carries the existing rule's ID and a diff against its current SQL. Accepting the proposal bumps the rule's version in place, deploys the new predicate, and writes the prior version into the rule's history with the precision it carried at retirement. Rules are no longer ship-and-forget — the registry is now the live audit trail.
+
+See [Monitor rules](/jobs/monitor-rules) for the full workflow, including the typology coverage waterfall that surfaces unexplained flag volume.

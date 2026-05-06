@@ -1,0 +1,61 @@
+---
+title: 'Monitor rules'
+description: 'Track the health of deployed rules and accept the updates Conway proposes when one starts to drift.'
+---
+
+Once a proposal is accepted, the rule moves into production and starts catching activity. The **MONITOR** sub-tab is where you watch how each rule performs over time, examine its version history, and decide whether to accept the updated SQL Conway proposes when precision degrades.
+
+## What the registry shows
+
+Open **Detection → Rules → MONITOR**. The registry lists every active rule with a health dot, current precision, the precision delta against last quarter, and flag rate. A rule's health is one of three states:
+
+- **Stable** — precision is holding inside its expected band.
+- **Drifting** — precision has slipped enough to warrant attention but not action.
+- **Degraded** — precision has fallen far enough that Conway has flagged the rule for revision. Degraded rows surface a **See Proposal** chip linking to the candidate replacement waiting in **PROPOSALS**.
+
+Use the filter chip in the top right to narrow the registry to one health bucket. Switch the card's pill toggle from **Registry** to **Timeline** to see the same rules as a swimlane chart — month-by-month health for the past year, with red dots marking the points where Conway intervened.
+
+## Inspect a rule's history
+
+Click a row to expand it. The expanded card has four panels:
+
+- **Metadata** — the rule's status (**Active**, **Under Review**, **Deprecated**), confidence tier, and a one-line description.
+- **Sparkline** — precision or coverage over the past twelve months, toggled by the pill above the chart.
+- **SQL** — the compiled predicate. The label above the block says which version is shown (`v3 (current)` by default).
+- **Version history** — every prior version with its `change description`, deployment date, and the precision Conway measured at the time it shipped. Click a version to load its SQL into the panel on the left; click the current version again to return.
+
+Version history is the audit trail for rule edits: nothing is overwritten in place, and every revision keeps the precision number it was deployed against so you can compare across versions without rerunning anything.
+
+## Accept an update Conway proposed
+
+When a rule degrades, Conway mines a replacement and queues it under **PROPOSALS** as an *updated rule* candidate rather than a brand-new one. Updated proposals carry the existing rule's ID and a diff against its current SQL, so review is about whether the change earns the version bump, not whether the rule should exist at all.
+
+<Steps>
+  <Step title="Open the proposal from the degraded row">
+    On the **MONITOR** tab, find the rule with a red health dot and click its **See Proposal** chip. The proposals tab opens with the candidate set scoped to that rule.
+  </Step>
+
+  <Step title="Compare the new SQL against the current version">
+    The proposal card shows the diff between the current production SQL and the candidate. Read what changed and why — Conway's rationale lives in the `change description` field directly under the diff.
+  </Step>
+
+  <Step title="Test the candidate on live data">
+    Copy the candidate SQL into the query console on the rule's source. The precision and coverage Conway reports are measured on a recent window; running it against today's data confirms the numbers still hold before you ship.
+  </Step>
+
+  <Step title="Accept or reject">
+    Use the proposal card's **Accept** or **Reject** control. Accepting bumps the rule's version, deploys the new SQL, and writes the prior version into the rule's history with the precision it carried at retirement. Rejecting leaves the rule running on its current version and records the rejection on the audit trail.
+  </Step>
+</Steps>
+
+## Coverage and typologies
+
+Below the registry card, the **Coverage** card answers a different question: *which fraud typologies are our rules actually catching?* The **Typologies** view lists every typology Conway has seen, the rules covering it, monthly volume, and a growing/stable/declining trend chip. The **Coverage** view stacks the same data as a waterfall over time, with an **Uncovered** band sitting on top — that band is the volume of flagged activity no current rule explains, and it is usually the strongest signal that a fresh proposal mining run is overdue.
+
+<Note>
+On Pilot deployments, continuous rule monitoring is not enabled. The MONITOR sub-tab renders illustrative data rather than live health, and update proposals do not fire automatically. Treat the page as a preview of the workflow you will use after rollout.
+</Note>
+
+<Tip>
+**Triage the registry quickly.** Before walking the registry row by row, ask the chat *"which rules drifted this month, and is the cause shared between any of them?"* Conway groups the drifters by likely root cause — a schema change on a shared source, a population shift in the underlying entities — so you can address one upstream issue instead of approving five updates that fix the same thing.
+</Tip>
